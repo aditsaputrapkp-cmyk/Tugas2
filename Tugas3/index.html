@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Peserta – eFootball Championship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">eFootball Championship</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Pendaftaran</a>
+        <a href="detail.html">Detail Pendaftaran</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h1>Pendaftaran Peserta eFootball Championship</h1>
+    <p>Lomba eFootball format 1 vs 1. Silakan isi data berikut untuk mendaftar.</p>
+
+    <div class="form-layout">
+
+      <div class="box">
+        <h2>Formulir Pendaftaran</h2>
+        <p class="small">Tanda * wajib diisi.</p>
+
+        <form action="detail.html" method="get">
+
+          <fieldset>
+            <legend>Data Diri</legend>
+
+            <div class="field">
+              <label for="nama">Nama lengkap *</label>
+              <input type="text" id="nama" name="nama" placeholder="Contoh: Adit Saputra" required>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="tempat">Tempat lahir *</label>
+                <input type="text" id="tempat" name="tempat" placeholder="Contoh: Pangkalpinang" required>
+              </div>
+              <div class="field">
+                <label for="tanggal">Tanggal lahir *</label>
+                <input type="date" id="tanggal" name="tanggal" required>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="adits@example.com" required>
+              </div>
+              <div class="field">
+                <label for="telepon">Nomor telepon</label>
+                <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="daerah">Asal daerah *</label>
+              <input type="text" id="daerah" name="daerah" placeholder="Contoh: Bangka Belitung" required>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Data Game</legend>
+
+            <div class="field">
+              <label for="nickname">Nickname game *</label>
+              <input type="text" id="nickname" name="nickname" placeholder="Contoh: Astra"
+                     pattern="[A-Za-z0-9_]{3,}" title="Minimal 3 karakter: huruf, angka, atau underscore" required>
+            </div>
+
+            <div class="field">
+              <label for="platform">Platform bermain *</label>
+              <select id="platform" name="platform" required>
+                <option value="">Pilih platform</option>
+                <option value="PlayStation 5">PlayStation 5</option>
+                <option value="PlayStation 4">PlayStation 4</option>
+                <option value="PC">PC</option>
+                <option value="Mobile">Mobile</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <span class="label-text">Mode turnamen *</span>
+              <div class="choice">
+                <input type="radio" id="mode-1v1" name="mode" value="1 vs 1" required>
+                <label for="mode-1v1">1 vs 1</label>
+              </div>
+              <div class="choice">
+                <input type="radio" id="mode-2v2" name="mode" value="2 vs 2" disabled>
+                <label for="mode-2v2">2 vs 2 (belum dibuka)</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="catatan">Catatan</label>
+              <textarea id="catatan" name="catatan" rows="3" placeholder="Boleh dikosongkan"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="choice">
+            <input type="checkbox" id="setuju" name="setuju" value="ya" required>
+            <label for="setuju">Saya setuju dengan ketentuan lomba *</label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn">Kirim</button>
+            <button type="reset" class="btn btn-gray">Reset</button>
+          </div>
+
+          <p class="small">
+            Catatan: ini halaman statis. Data hanya dikirim lewat alamat URL ke halaman detail,
+            tidak disimpan di database dan tidak dikirim ke penyelenggara.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 eFootball Championship – proyek pembelajaran</p>
+  </footer>
+
+</body>
+</html>

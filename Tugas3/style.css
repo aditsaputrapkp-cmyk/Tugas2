@@ -1,0 +1,194 @@
+/* style.css – CSS global untuk index.html dan detail.html */
+
+:root {
+  --bg: #f5f5f5;
+  --text: #1c1c1c;
+  --muted: #666666;
+  --border: #dcdcdc;
+  --light: #ececec;
+  --accent: #2b2b2b;
+  --accent-dark: #000000;
+  --gold: #b5b5b5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: var(--bg);
+  /* Foto samar di belakang: letakkan file di images/messi.jpg */
+  background-image:
+    linear-gradient(rgba(245, 245, 245, 0.93), rgba(245, 245, 245, 0.93)),
+    url("images/messi.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+h1 { font-size: 1.8rem; margin: 2rem 0 0.5rem; }
+h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); }
+
+.container { width: min(1000px, 92%); margin: 0 auto; }
+.small { font-size: 0.9rem; color: var(--muted); }
+
+/* Header */
+.site-header {
+  background: var(--light);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.8rem 0;
+}
+.brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav { display: flex; gap: 1.2rem; }
+.nav a { color: var(--text); text-decoration: none; padding: 0.2rem 0; }
+.nav a:hover { color: var(--accent); }
+.nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+/* Box */
+.box {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem;
+}
+
+/* Layout halaman pendaftaran */
+.form-layout { max-width: 720px; margin: 1.5rem 0 0; }
+
+/* Form */
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 0 0 1.2rem;
+  padding: 0.8rem 1rem 0.2rem;
+}
+legend { font-weight: bold; padding: 0 0.4rem; }
+
+.field { margin-bottom: 1rem; }
+.field-row { display: flex; gap: 1rem; }
+.field-row .field { flex: 1; }
+
+label, .label-text { display: block; margin-bottom: 0.3rem; font-weight: bold; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  min-height: 42px;
+  font: inherit;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  background: #ffffff;
+  color: var(--text);
+}
+textarea { resize: vertical; }
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.choice { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+.choice label { margin: 0; font-weight: normal; }
+.choice input { width: 18px; height: 18px; }
+
+.actions { display: flex; gap: 0.6rem; margin: 1.2rem 0; }
+
+/* Tombol */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  min-height: 42px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #ffffff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn-gray { background: #6e6e6e; }
+.btn-gray:hover { background: #575757; }
+
+/* Halaman detail: tabel */
+
+.info-table {
+  width: 100%;
+  margin: 1.2rem 0 1.5rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+.info-table th,
+.info-table td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.info-table tr:last-child th,
+.info-table tr:last-child td { border-bottom: 0; }
+.info-table thead th {
+  width: auto;
+  background: #222222;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-right: 0;
+  border-bottom: 3px solid #8a8a8a;
+}
+.info-table tbody th {
+  width: 35%;
+  font-weight: normal;
+  color: var(--muted);
+  font-size: 0.95rem;
+  background: #f7f7f7;
+  border-right: 1px solid var(--border);
+}
+.info-table td { font-weight: bold; word-break: break-word; }
+.info-table tbody tr:nth-child(even) td { background: #fcfcfc; }
+.info-table tbody tr:hover th,
+.info-table tbody tr:hover td { background: #f0f0f0; color: #000000; }
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.site-footer p { margin: 0; }
+
+/* Responsif */
+@media (max-width: 500px) {
+  h1 { font-size: 1.5rem; }
+  .field-row { flex-direction: column; gap: 0; }
+  .actions { flex-direction: column; }
+  .info-table th { width: 40%; }
+  .info-table th, .info-table td { padding: 0.7rem 0.6rem; }
+}
